@@ -1,6 +1,32 @@
-<html> 
-    Full name thingy
-    <h1>This is heading</h1>
-    <p>This is paragraph</p>
-    <a href="https://www.google.com">This is google link</a>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head> 
+    <title>S Hein</title>
+</head>
+
+<body>
+   <h1>Head and Tail project</h1>
+   <h2 id="coinFace">HEAD</h2>
+   <button id="flipButton">Flip</button>
+</body>
+
+<script>
+    const element1 = document.getElementById("coinFace");
+    const element2 = document.getElementById("flipButton");
+    
+    element2.onclick =()=>{
+        const randomNumber = Math.floor(Math.random() * 2);
+
+        if(randomNumber === 0){
+            element1.innerText = "HEAD";
+        }else{
+            element1.innerText = "TAIL";
+        }
+
+    };
+    
+</script>
+
 </html>
