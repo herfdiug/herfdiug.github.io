@@ -3,27 +3,40 @@
 <html lang="en">
 
 <head> 
-    <title>S Hein</title>
+    <title>Herfdiug</title>
+
+    <style>
+        div{
+            display: flex;
+            background-color: aquamarine;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
 </head>
 
 <body>
-   <h1>Head and Tail project</h1>
-   <h2 id="coinFace">HEAD</h2>
-   <button id="flipButton">Flip</button>
-   s
+    <div>
+        <h1>Head and Tail project</h1>
+        <!-- <h2 id="coinFace">HEAD</h2> -->
+        <img src="heads.jpg" id="coinFace" width="200" height="200"/>
+        <button id="flipButton">Flip</button>
+    </div>
 </body>
 
 <script>
     const element1 = document.getElementById("coinFace");
-    const element2 = document.getElementById("flipButton");
     
     element2.onclick =()=>{
         const randomNumber = Math.floor(Math.random() * 2);
 
         if(randomNumber === 0){
-            element1.innerText = "HEAD";
+            console.log("This is heads!")
+            element1.src = "heads.jpg";
         }else{
-            element1.innerText = "TAIL";
+            console.log("This is tails!")
+            element1.src = "tails.jpg";
         }
 
     };
