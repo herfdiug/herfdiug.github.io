@@ -11,6 +11,7 @@
             background-color: aquamarine;
             justify-content: center;
             align-items: center;
+            animation: infinite;
         }
     </style>
 
@@ -18,7 +19,7 @@
 
 <body>
     <div>
-        <h1>Head and Tail project</h1>
+        <h1>Coin flip project</h1>
         <!-- <h2 id="coinFace">HEAD</h2> -->
         <img src="heads.jpg" id="coinFace" width="200" height="200"/>
         <button id="flipButton">Flip</button>
@@ -27,6 +28,7 @@
 
 <script>
     const element1 = document.getElementById("coinFace");
+    const element2 = document.getElementById("flipButton")
     
     element2.onclick =()=>{
         const randomNumber = Math.floor(Math.random() * 2);
