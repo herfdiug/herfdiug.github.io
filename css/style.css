@@ -1,0 +1,561 @@
+/* ═══════════════════════════════════════════
+   Roblox Scripter Portfolio
+   Terminal Theme — style.css
+   ═══════════════════════════════════════════ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Courier New', 'Consolas', 'Lucida Console', monospace;
+  background: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.7;
+  font-size: 15px;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+/* ── Scanner / CRT lines ── */
+.scanlines {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 4px
+  );
+}
+
+/* ── Selection ── */
+::selection {
+  background: #3fb950;
+  color: #0d1117;
+}
+
+/* ── Links ── */
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #3fb950;
+  text-decoration: underline;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 100px 0 60px;
+}
+
+/* ── Navigation ── */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #0d1117;
+  border-bottom: 1px solid #21262d;
+  padding: 12px 20px;
+}
+
+.nav-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-prompt {
+  color: #8b949e;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #8b949e;
+  font-size: 13px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.nav-link:hover {
+  color: #3fb950;
+  border-color: #3fb950;
+  text-decoration: none;
+}
+
+/* ── Terminal Window ── */
+.terminal-window {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #161b22;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.terminal-header {
+  background: #21262d;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #30363d;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff6b6b; }
+.dot.yellow { background: #ffd93d; }
+.dot.green { background: #6bcb6b; }
+
+.terminal-title {
+  color: #8b949e;
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.terminal-body {
+  padding: 20px 24px;
+  min-height: 280px;
+}
+
+.line {
+  margin-bottom: 4px;
+}
+
+.indent {
+  padding-left: 28px;
+}
+
+.prompt {
+  color: #3fb950;
+  font-weight: bold;
+}
+
+.output {
+  color: #58a6ff;
+}
+
+/* ── Typing cursor ── */
+.cursor {
+  color: #3fb950;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Hero CTA Buttons ── */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  font-family: inherit;
+  font-size: 14px;
+  background: #161b22;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: #3fb950;
+  color: #3fb950;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(63, 185, 80, 0.15);
+}
+
+/* ── Section Headers ── */
+section {
+  margin-bottom: 70px;
+}
+
+.section-header {
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #21262d;
+  color: #8b949e;
+}
+
+/* ── Card ── */
+.card {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.card p {
+  margin-bottom: 14px;
+  color: #c9d1d9;
+}
+.card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: #3fb950;
+}
+
+.about-cmd {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #21262d;
+  font-size: 14px;
+}
+
+/* ── Project Cards ── */
+.project-card {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  transition: all 0.25s;
+  position: relative;
+}
+.project-card:hover {
+  border-color: #30363d;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.project-name {
+  color: #58a6ff;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  color: #8b949e;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #8b949e;
+}
+
+.project-status {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.project-status.live {
+  color: #3fb950;
+}
+.project-status.soon {
+  color: #d29922;
+}
+.project-status.doc {
+  color: #58a6ff;
+}
+
+.project-note {
+  color: #8b949e;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 16px;
+}
+
+/* ── Skills ── */
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.skill:last-child {
+  margin-bottom: 0;
+}
+
+.skill-name {
+  width: 140px;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #c9d1d9;
+}
+
+.skill-track {
+  flex: 1;
+  height: 8px;
+  background: #21262d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: #3fb950;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  width: 0%;
+}
+.skill-fill.animated {
+  /* widths set inline in HTML, triggered via JS class */
+}
+
+.skill-label {
+  width: 80px;
+  text-align: right;
+  font-size: 12px;
+  color: #8b949e;
+  flex-shrink: 0;
+}
+
+/* ── Journal ── */
+.journal-entry {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+
+.entry-header {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #8b949e;
+  margin-bottom: 6px;
+}
+
+.entry-date {
+  color: #3fb950;
+}
+
+.entry-time {
+  color: #484f58;
+}
+
+.entry-title {
+  color: #c9d1d9;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.entry-body {
+  color: #8b949e;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.entry-link a {
+  font-size: 13px;
+}
+
+/* ── Contact ── */
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.contact-key {
+  width: 80px;
+  color: #8b949e;
+  text-align: right;
+}
+
+.contact-colon {
+  color: #484f58;
+}
+
+.contact-val {
+  color: #c9d1d9;
+  flex: 1;
+}
+
+.copy-btn {
+  background: none;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.copy-btn:hover {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+.copy-btn.copied {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.contact-link {
+  font-size: 11px;
+  padding: 2px 8px;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  border-color: #58a6ff;
+  text-decoration: none;
+}
+
+.contact-divider {
+  border-top: 1px solid #21262d;
+  margin: 10px 0;
+}
+
+.contact-footer {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid #21262d;
+}
+
+.footer-line {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 12px;
+  color: #484f58;
+}
+
+/* ── Fade-in animation ── */
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 80px 0 40px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .terminal-body {
+    padding: 16px;
+    min-height: 220px;
+  }
+
+  .indent {
+    padding-left: 16px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .skill {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-name {
+    width: 100px;
+  }
+
+  .skill-label {
+    width: 60px;
+  }
+
+  .project-status {
+    position: static;
+    display: block;
+    margin-top: 8px;
+  }
+
+  .contact-line {
+    flex-wrap: wrap;
+  }
+
+  .contact-key {
+    width: auto;
+  }
+}

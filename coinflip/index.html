@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head> 
+    <title>Herfdiug — coin flip</title>
+
+    <style>
+        div{
+            display: flex;
+            background-color: aquamarine;
+            justify-content: center;
+            align-items: center;
+            animation: infinite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>Coin flip project</h1>
+        <!-- <h2 id="coinFace">HEAD</h2> -->
+        <img src="../heads.jpg" id="coinFace" width="200" height="200"/>
+        <button id="flipButton">Flip</button>
+    </div>
+</body>
+
+<script>
+    const element1 = document.getElementById("coinFace");
+    const element2 = document.getElementById("flipButton")
+    
+    element2.onclick =()=>{
+        const randomNumber = Math.floor(Math.random() * 2);
+
+        if(randomNumber === 0){
+            console.log("This is heads!")
+            element1.src = "../heads.jpg";
+        }else{
+            console.log("This is tails!")
+            element1.src = "../tails.jpg";
+        }
+
+    };
+    
+</script>
+
+</html>
