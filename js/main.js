@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const phrases = [
     'State Machines',
     'Spawners & Lifetime Rules',
-    'ECS, Drawn Before Coded',
-    'Playtested, Not Assumed',
+    'ECS, Systems and Queries',
+    'Tooling That Fails Loud',
   ];
 
   let phraseIndex = 0;
